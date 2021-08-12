@@ -123,7 +123,7 @@ public class piragua : MonoBehaviour
             module.HandlePass();
             moduleSolved = true;
             StartCoroutine(ColorIce(colors[syrupOrder[currentFlavor]]));
-            // SOUND EFFECT
+            audio.PlaySoundAtTransform("solve", transform);
         }
     }
 
