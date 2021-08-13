@@ -164,4 +164,37 @@ public class piragua : MonoBehaviour
             Debug.LogFormat("[Piragua #{0}] The correct flavor is now {1}.", moduleId, flavorNames[solution]);
         }
     }
+
+    // Twitch Plays
+#pragma warning disable 414
+    private readonly string TwitchHelpMessage = "!{0} bottle [Presses the syrup bottle. Note that you may need to tilt to see the color of the syrup.] !{0} submit [Presses the piragua cup.]";
+#pragma warning restore 414
+
+    private IEnumerator ProcessTwitchCommand(string input)
+    {
+        input = input.ToUpperInvariant().Trim();
+        if (input == "BOTTLE")
+        {
+            yield return null;
+            syrupButton.OnInteract();
+        }
+        else if (input == "SUBMIT")
+        {
+            yield return null;
+            piraguaButton.OnInteract();
+        }
+        else
+            yield break;
+    }
+
+    private IEnumerator TwitchHandleForcedSolve()
+    {
+        yield return null;
+        while (syrupOrder[currentFlavor] != solution)
+        {
+            syrupButton.OnInteract();
+            yield return new WaitForSeconds(.1f);
+        }
+        piraguaButton.OnInteract();
+    }
 }
