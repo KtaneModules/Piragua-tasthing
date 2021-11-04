@@ -14,10 +14,9 @@ MonoBehaviour:
   id: piragua
   title: Piragua
   author: TasThing
-  description: 'Hey pana, I run this town!
-
-
-    Module idea and implementaton by TasThing.'
+  description: "Hey pana, I run this town!\r\n\r\nModule idea and implementaton by
+    TasThing.\r\n\r\nManual HTML: https://ktane.timwi.de/HTML/Piragua.html\r\nManual
+    PDF: https://ktane.timwi.de/PDF/Piragua.pdf"
   version: 1.1
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 2a72bd8f42d76af448c5c0a51f2d55d9, type: 3}
